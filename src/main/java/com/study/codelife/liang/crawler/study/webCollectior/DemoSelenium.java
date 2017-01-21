@@ -1,4 +1,4 @@
-package com.study.codelife.liang.crawler.study.webCont;
+package com.study.codelife.liang.crawler.study.webCollectior;
 import cn.edu.hfut.dmic.webcollector.crawldb.DBManager;
 import cn.edu.hfut.dmic.webcollector.crawler.Crawler;
 import cn.edu.hfut.dmic.webcollector.fetcher.Executor;
