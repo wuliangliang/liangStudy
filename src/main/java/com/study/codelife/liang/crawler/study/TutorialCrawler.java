@@ -21,7 +21,7 @@ public class TutorialCrawler extends BreadthCrawler {
         page.getDoc().select(css选择器)方法，page.getDoc()获取到的是Jsoup中的
         Document对象，细节请参考Jsoup教程
     */
-    @Override
+
     public void visit(Page page, CrawlDatums next) {
         if (page.matchUrl("http://blog.csdn.net/.*/article/details/.*")) {
             String title = page.select("div[class=article_title]").first().text();
