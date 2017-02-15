@@ -114,7 +114,7 @@ public class BaiduCrawl extends BreadthCrawler {
         int i = 1;
 
         BaiduCrawl crawler = new BaiduCrawl("baiduCrawl", false);
-        crawler.setThreads(1);
+        crawler.setThreads(4);
         Scanner pattern_file = new Scanner(new File("/Users/doubling_ruc/Desktop/patterns.txt"));
         Scanner disease_file = new Scanner(new File("/Users/doubling_ruc/Desktop/disease1.txt"));
         Set<String> patternSet = new HashSet<String>();
