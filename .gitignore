@@ -3,4 +3,6 @@
 target
 .idea
 *_crawler
+.txt
+.png
 baiduCrawl
