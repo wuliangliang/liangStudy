@@ -27,7 +27,7 @@ public class NewsCrawler extends BreadthCrawler {
         String url = page.getUrl();
     /*if page is news page*/
         if (page.matchUrl("http://news.hfut.edu.cn/show-.*html")) {
-        /*we use jsoup to parse page*/
+        /*we use jsoup to todataBase page*/
             Document doc = page.getDoc();
 
         /*extract title and content of news by css selector*/
