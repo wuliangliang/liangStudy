@@ -34,7 +34,7 @@ public class JDBCHelper {
 
 
 
-    //test 创建数据库
+    //testTest 创建数据库
     @Test
     public void createDataBase(){
         JdbcTemplate jdbcTemplate = null;

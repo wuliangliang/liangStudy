@@ -40,7 +40,7 @@ public class TutorialCrawler2 extends BreadthCrawler {
         第一个参数是爬虫的crawlPath，crawlPath是维护URL信息的文件夹的路径，如果爬虫需要断点爬取，每次请选择相同的crawlPath
         第二个参数表示是否自动抽取符合正则的链接并加入后续任务
      */
-        TutorialCrawler2 crawler = new TutorialCrawler2("D:/test/crawler/demo",true);
+        TutorialCrawler2 crawler = new TutorialCrawler2("D:/testTest/crawler/demo",true);
         crawler.setThreads(50);
         crawler.addSeed("http://list.jd.com/list.html?cat=1319,1523,7052&page=1&go=0&JL=6_0_0");
 //     crawler.addSeed("http://www.zhihu.com/");

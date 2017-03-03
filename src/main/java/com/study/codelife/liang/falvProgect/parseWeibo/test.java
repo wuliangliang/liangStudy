@@ -14,7 +14,6 @@ import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-
 /**
  * Created by liang on 2017/1/3.
  */
@@ -24,7 +23,7 @@ public class test {
         String str2="<i class=\"\"face face_1 icon_19\"\">[笑cry]</i>\n";
         System.out.println(str1.replaceAll("<a.*href='http://m.weibo.cn/n.*>",""));
     }
-@Test
+    @Test
     public  void test() throws IOException {
 //        LinkedList<File> fileList = ReadFile.traverseFolder1("C:\\Users\\liang\\Desktop\\Crawl\\resultFile").get("notEmpty");
         String fileName = "C:\\Users\\liang\\Desktop\\Crawl\\resultFile\\reslut1050089427.csv";
@@ -60,12 +59,10 @@ public class test {
                 notempty.add(uuid);
             }
         }
-
         Scanner scanner =new Scanner(new File("C:\\Users\\liang\\Desktop\\Crawl\\UserId.txt"));
         while(scanner.hasNext()){
             all.add(scanner.nextLine());
         }
-
         for(String str : all){
             if(!notempty.contains(str)){
                 empty.add(str);
