@@ -19,7 +19,7 @@ import java.util.*;
 public class LoadDada {
     private SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
     public TreeMap<Long,ArrayList<WeiBo>>  loaddate() throws SQLException, IOException, ParseException {
-        HashSet<String> biaoqing = new HashSet<String>();
+        HashSet<String> biaoqing = new HashSet<String>();  //表情。已经弄好表情库
         /*
         *测试的东西
         * */
@@ -32,11 +32,6 @@ public class LoadDada {
         List<WeiBoDomain> weiBos= parseDao.selectALl();
         for(WeiBoDomain weibo :weiBos){
             WeiBo wb = new WeiBo();
-            System.out.println("weibo.getId()"+weibo.getId());
-            System.out.println("weibo.getUuid()"+weibo.getUuid());
-            System.out.println("weibo.getTime()"+weibo.getTime());
-            System.out.println("weibo.getContentLook()"+weibo.getContentLook());
-            System.out.println("weibo.getRetweetLook()"+weibo.getRetweetLook());
             //****
             String contenLooked = weibo.getContentLook();
             String retweetLooked = weibo.getRetweetLook();
@@ -78,28 +73,17 @@ public class LoadDada {
                weiboList.add(wb);
                weiBoMap.put(TDate,weiboList);
            }
-            //测试
-            /*
-            bw.write(content.replaceAll("<a.*?</a>","").replaceAll("<span.*?</span>","").replaceAll("<img.*?>","").replaceAll("<i.*?</i>","").replaceAll("//:","").replaceAll("查看帮助：http://t.cn/.{0,10}",""));
-            bw.write("\n");
-            bw.write(retweet.replaceAll("<a.*?</a>","").replaceAll("<span.*?</span>","").replaceAll("<img.*?>","").replaceAll("<i.*?</i>","").replaceAll("//:","").replaceAll("查看帮助：http://t.cn/.{0,10}",""));
-            bw.write("\n");
-            */
-        }
 
-        //for循环结束
-        for(String str : biaoqing){
-            bw.write(str);
-            bw.write("\n");
         }
-
         bw.flush();
         return weiBoMap;
     }
     public static void main(String[] args) throws SQLException, IOException, ParseException {
         LoadDada loadDada  = new LoadDada();
         TreeMap<Long,ArrayList<WeiBo>> weiBoList=loadDada.loaddate();
-       // for( )
+       // for(){
+
+        //
     }
 
 
