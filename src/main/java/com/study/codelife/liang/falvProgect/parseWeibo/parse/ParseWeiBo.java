@@ -58,11 +58,61 @@ public class ParseWeiBo {
         TreeMap<Long,HashMap<String,Integer>> dataCount = new TreeMap<Long, HashMap<String,Integer>>();
         for(Map.Entry<Long,ArrayList<WeiBo>> entry:hotMap.entrySet()){
             //每天的表情
+            int happy = 0;
+            int notHappy= 0;
+            //统计一天的高兴和不高兴的分数
             for(WeiBo weibo:entry.getValue()){
-                
+                String contentLook = weibo.getContentLook();
+                if(contentLook!=null){
+                    String[] contentlooks = contentLook.split(",");
+                    for(String str : contentlooks){
+                        if(Integer.valueOf(str)>=0){
+                            happy += Integer.valueOf(str);
+                        }else{
+                            notHappy+=Integer.valueOf(str);
+                        }
+                    }
+                }
+                String reteetLook = weibo.getRetweetLook();
+                if(reteetLook!=null){
+                    String[] reteetLoooks = reteetLook.split(",");
+                    for(String str : reteetLoooks){
+                        if(Integer.valueOf(str)>=0){
+                            happy += Integer.valueOf(str);
+                        }else{
+                            notHappy+=Integer.valueOf(str);
+                        }
+                    }
+                }
+            }
+            if(dataCount.get(entry.getKey())!=null){
+                HashMap<String,Integer> map = dataCount.get(entry.getKey());
+                map.put("happy",map.get("happy")+happy);
+                map.put("notHappy",map.get("notHappy")+notHappy);
+                dataCount.put(entry.getKey(),map);
+            }else{
+                HashMap<String,Integer> map = new HashMap<String, Integer>();
+                map.put("happy",happy);
+                map.put("notHappy",notHappy);
+                dataCount.put(entry.getKey(),map);
             }
         }
         return dataCount;
+    }
+
+
+    public HashMap<String,Integer> biaoqingall( TreeMap<Long,HashMap<String,Integer>> biaoqing){
+        HashMap<String,Integer> biaoqingall = new HashMap<String, Integer>();
+        int happy =0;
+        int notHappy=0;
+        for(Map.Entry<Long,HashMap<String,Integer>> entry:biaoqing.entrySet()){
+            HashMap<String,Integer> biaoqingfen = entry.getValue();
+            happy+=biaoqingfen.get("happy");
+            notHappy+=biaoqingfen.get("notHappy");
+        }
+        biaoqingall.put("happy",happy);
+        biaoqingall.put("notHappy",notHappy);
+        return biaoqingall;
     }
 
 
