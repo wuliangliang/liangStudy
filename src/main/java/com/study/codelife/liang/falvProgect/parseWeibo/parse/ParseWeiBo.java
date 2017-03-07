@@ -54,7 +54,7 @@ public class ParseWeiBo {
     }
 
     //统计总共的情绪
-    public TreeMap<Long,Integer> qxCount(TreeMap<Long,ArrayList<WeiBo>> hotMap){
+    public TreeMap<Long,HashMap<String,Integer>> qxCount(TreeMap<Long,ArrayList<WeiBo>> hotMap){
         TreeMap<Long,HashMap<String,Integer>> dataCount = new TreeMap<Long, HashMap<String,Integer>>();
         for(Map.Entry<Long,ArrayList<WeiBo>> entry:hotMap.entrySet()){
             //每天的表情

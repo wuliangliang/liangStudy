@@ -9,7 +9,6 @@ import org.junit.Test;
 import org.springframework.jdbc.core.BatchPreparedStatementSetter;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementSetter;
-
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.IOException;
